@@ -2,7 +2,7 @@
 #include "sqr_eq.h"
 
 double * solve_eq(double a, double b, double c) {
-    static double res[3] = {0, 0, NO_SOl};
+    static double res[3] = {0, 0, NO_SOL};
 
     double D = pow(b, 2) - 4*a*c;
 
@@ -17,5 +17,5 @@ double * solve_eq(double a, double b, double c) {
         res[1] = ((-1*b) + sqrt(D))/ 2*a;
     }
 
-    return &res;
+    return res;
 }
