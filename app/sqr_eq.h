@@ -5,6 +5,12 @@
 #define ONE_SOL 1
 #define TWO_SOL 2
 
-double * solve_eq(double a, double b, double c);
+typedef struct _solution {
+    double x1;
+    double x2;
+    int sol_count;
+} solution;
+
+solution solve_eq(double a, double b, double c);
 
 #endif
