@@ -6,6 +6,7 @@ extern "C" {
 #include "sqr_eq_copy.h"
 }
 
-TEST(test1, suite1) {
-    EXPECT_EQ(1, 1);
+TEST(sqr_eq_sol, no_sol) {
+    double res = *solve_eq(2, 2, 10);
+    EXPECT_EQ(res[2], NO_SOL);
 }
