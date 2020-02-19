@@ -10,7 +10,7 @@ solution solve_eq(double a, double b, double c) {
         res.sol_count = NO_SOL;
     } else if(D == 0.0) {
         res.sol_count = ONE_SOL;
-        res.x1 = (-1.0*b) / 2.0*a;
+        res.x1 = (-1.0*b) / (2.0*a);
     } else if(D > 0.0) {
         res.sol_count = TWO_SOL;
         res.x1 = ((-1.0*b) - sqrt(D)) / (2.0*a);
