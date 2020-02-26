@@ -1,30 +1,34 @@
 dist: trusty
 
 language:
-  - cpp
+- cpp
 
 before_install:
-  - pip install --user cpp-coveralls
+- pip install --user cpp-coveralls
 
 addons:
   sonarcloud:
-    organization: "nikonp"
+    organization: nikonp
     token:
-      secure: $SECURE_TOKEN
+      secure: $SONAR_TOKEN
 
 script:
-  - qmake
-  - make
-  - ./tests/tests
-  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+- qmake
+- make
+- "./tests/tests"
+- build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+- sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 after_success:
-  - coveralls --root . -E ".*external.*" -E ".*tests.*"
+- coveralls --root . -E ".*external.*" -E ".*tests.*"
 
 cache:
   directories:
-    - '$HOME/.sonar/cache'
-    
+  - "$HOME/.sonar/cache"
+
+
 notifications:
   email: false
+env:
+  global:
+    secure: $SONAR_TOKEN
