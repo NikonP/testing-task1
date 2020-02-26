@@ -4,10 +4,17 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
+addons:
+  sonarcloud:
+    organization: "nikonp"
+    token:
+      secure: $SECURE_TOKEN
+
 script:
   - qmake
   - make
   - ./tests/tests
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
