@@ -12,10 +12,10 @@ addons:
     token: $SONAR_TOKEN
 
 script:
-  - qmake
-  - make
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
+  - qmake
+  - make
   - ./tests/tests
 
 after_success:
