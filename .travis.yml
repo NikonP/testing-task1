@@ -11,6 +11,8 @@ addons:
     organization: "nikonp"
     token:
       secure: $SONAR_TOKEN
+  sonarqube:
+      token: $SONAR_TOKEN
 
 script:
   - qmake
