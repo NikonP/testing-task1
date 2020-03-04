@@ -12,7 +12,6 @@ addons:
     token:
       secure: $SONAR_TOKEN
 
-# run tests AFTER sonar!!!
 script:
   - qmake
   - make
