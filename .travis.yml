@@ -9,10 +9,7 @@ before_install:
 addons:
   sonarcloud:
     organization: "nikonp"
-    token:
-      secure: $SONAR_TOKEN
-  sonarqube:
-      token: $SONAR_TOKEN
+    token: $SONAR_TOKEN
 
 script:
   - qmake
