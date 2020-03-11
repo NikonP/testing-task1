@@ -6,23 +6,12 @@ extern "C" {
 #include "sqr_eq.h"
 }
 
-TEST(sqr_eq_sol, no_sol_1) {
-    solution res = solve_eq(1, 1, 1);
-    EXPECT_EQ(NO_SOL, res.sol_count);
-}
-
-TEST(sqr_eq_sol, no_sol_2) {
+TEST(sqr_eq_sol, no_sol) {
     solution res = solve_eq(2, 2, 1);
     EXPECT_EQ(NO_SOL, res.sol_count);
 }
 
-TEST(sqr_eq_sol, one_sol_1) {
-    solution res = solve_eq(1, 0, 0);
-    EXPECT_EQ(ONE_SOL, res.sol_count);
-    EXPECT_DOUBLE_EQ(0.0, res.x1);
-}
-
-TEST(sqr_eq_sol, one_sol_2) {
+TEST(sqr_eq_sol, one_sol) {
     solution res = solve_eq(4, 4, 1);
     EXPECT_EQ(ONE_SOL, res.sol_count);
     EXPECT_DOUBLE_EQ(-0.5, res.x1);
